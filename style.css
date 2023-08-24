@@ -51,11 +51,15 @@ span {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-height: 100%;
 }
 .question-info h1 {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
+}
+ul {
+  max-height: 40vh;
 }
 ul > li {
   margin-bottom: 1rem;
@@ -63,6 +67,7 @@ ul > li {
   font-weight: bold;
   border-bottom: 1px solid var(--light-grayish-blue);
   padding-bottom: 0.75rem;
+  max-width: 20rem;
 }
 ul > li h5 {
   display: flex;

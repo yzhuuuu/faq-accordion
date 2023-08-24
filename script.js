@@ -6,13 +6,18 @@ window.addEventListener("load", () => {
 });
 h5s.forEach((h5) => {
   h5.addEventListener("click", (e) => {
-    // console.log(`hello this is h5 ${e.target.innerHTML}`);
     const sibling = e.currentTarget.nextElementSibling;
     const nextElement = e.currentTarget.nextSibling;
-    addHideClassFromAllSpans();
-    sibling.classList.remove("hide");
-    removeRotateClassFromAllH5s();
     const arrow = e.currentTarget.querySelector("img");
+
+    if (e.currentTarget.classList.contains("bold-heading")) {
+      addHideClassFromAllSpans();
+      removeRotateClassFromAllH5s();
+      return;
+    }
+    addHideClassFromAllSpans();
+    removeRotateClassFromAllH5s();
+    sibling.classList.remove("hide");
     arrow.classList.add("rotate");
     e.currentTarget.classList.add("bold-heading");
   });
@@ -20,12 +25,17 @@ h5s.forEach((h5) => {
 
 function addHideClassFromAllSpans() {
   spans.forEach((span) => {
-    span.classList.add("hide");
+    if (!span.classList.contains("hide")) {
+      span.classList.add("hide");
+    }
   });
 }
 function removeRotateClassFromAllH5s() {
   h5s.forEach((h5) => {
     const img = h5.querySelector("img");
-    img.classList.remove("rotate");
+    if (img.classList.contains("rotate")) {
+      img.classList.remove("rotate");
+      h5.classList.remove("bold-heading");
+    }
   });
 }
