@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --very-grayish-blue: hsl(240, 6%, 50%);
+  --light-grayish-blue: hsl(240, 5%, 91%);
+  --soft-red: hsl(14, 88%, 65%);
+  --very-dark-des-blue: hsl(238, 29%, 16%);
+  --font-kumbh: "Kumbh Sans", sans-serif;
+  --font-size: 12px;
+}
+body {
+  font-family: var(--font-kumbh);
+  font-size: var(--font-size);
+  min-height: 100vh;
+  background: linear-gradient(0deg, var(--soft-blue), var(--soft-violet));
+  display: grid;
+  place-items: center;
+  padding: 0 2rem;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+span {
+  display: block;
+}
+.container {
+  position: relative;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 15px;
+}
+.img-container {
+  position: absolute;
+  top: -6.5rem;
+  left: 50px;
+  height: 15rem;
+  width: 15rem;
+}
+.question-info {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.question-info h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+ul > li {
+  margin-bottom: 1rem;
+  color: var(--very-grayish-blue);
+  font-weight: bold;
+  border-bottom: 1px solid var(--light-grayish-blue);
+  padding-bottom: 0.75rem;
+}
+ul > li h5 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: var(--font-size);
+  gap: 2rem;
+}
+ul li h5 img {
+  transition: transform 0.05s ease-in;
+}
+@media screen and (min-width: 1080px) {
+  .container {
+    display: grid;
+    max-width: 60vw;
+    grid-template-columns: 1fr 1fr;
+  }
+  .img-container {
+    position: static;
+    height: 25rem;
+    width: 25rem;
+    transform: translate(-5rem, 5rem);
+  }
+  .question-info {
+    align-items: flex-start;
+    /*padding: 0 2rem 2rem 0;*/
+    padding: 0 2rem;
+    justify-content: space-around;
+    margin-top: 0;
+  }
+  ul li h5 {
+    gap: 5rem;
+  }
+}
+.hide {
+  display: none;
+}
+.bold-heading {
+  color: var(--very-dark-des-blue);
+}
+.rotate {
+  transform: rotate(180deg);
+}
